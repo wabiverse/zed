@@ -35,6 +35,7 @@ mod python;
 mod ruby;
 mod rust;
 mod svelte;
+mod swift;
 mod tailwind;
 mod terraform;
 mod toml;
@@ -110,6 +111,7 @@ pub fn init(
         ("rust", tree_sitter_rust::language()),
         ("scheme", tree_sitter_scheme::language()),
         ("svelte", tree_sitter_svelte::language()),
+        ("swift", tree_sitter_swift::language()),
         ("toml", tree_sitter_toml::language()),
         ("tsx", tree_sitter_typescript::language_tsx()),
         ("typescript", tree_sitter_typescript::language_typescript()),
@@ -316,6 +318,7 @@ pub fn init(
             Arc::new(tailwind::TailwindLspAdapter::new(node_runtime.clone())),
         ]
     );
+    language!("swift", vec![Arc::new(swift::SourcekitLspAdapter)]);
     language!(
         "php",
         vec![

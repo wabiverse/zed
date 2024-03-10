@@ -5322,6 +5322,7 @@ dependencies = [
  "tree-sitter-rust",
  "tree-sitter-scheme",
  "tree-sitter-svelte",
+ "tree-sitter-swift",
  "tree-sitter-toml",
  "tree-sitter-typescript",
  "tree-sitter-vue",
@@ -10731,6 +10732,16 @@ dependencies = [
 name = "tree-sitter-svelte"
 version = "0.10.2"
 source = "git+https://github.com/Himujjal/tree-sitter-svelte?rev=bd60db7d3d06f89b6ec3b287c9a6e9190b5564bd#bd60db7d3d06f89b6ec3b287c9a6e9190b5564bd"
+dependencies = [
+ "cc",
+ "tree-sitter",
+]
+
+[[package]]
+name = "tree-sitter-swift"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "35df04c03c06a4a2490e9ae0b8f063085a2599e6550cd3841e3b4f7b2e06a77f"
 dependencies = [
  "cc",
  "tree-sitter",
