@@ -36,9 +36,9 @@ impl LspAdapter for SourcekitLspAdapter {
         _: &dyn LspAdapterDelegate,
     ) -> Option<LanguageServerBinary> {
         Some(LanguageServerBinary {
-          path: "/usr/bin/sourcekit-lsp".into(),
+          path: "/usr/bin/xcrun".into(),
           env: None,
-          arguments: vec![],
+          arguments: vec!["sourcekit-lsp".into()],
         })
     }
 
@@ -48,9 +48,9 @@ impl LspAdapter for SourcekitLspAdapter {
 
     async fn installation_test_binary(&self, _: PathBuf) -> Option<LanguageServerBinary> {
       Some(LanguageServerBinary {
-        path: "/usr/bin/sourcekit-lsp".into(),
+        path: "/usr/bin/xcrun".into(),
         env: None,
-        arguments: vec!["--help".into()],
+        arguments: vec!["sourcekit-lsp".into(), "--help".into()],
       })
     }
 }
